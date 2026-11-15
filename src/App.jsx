@@ -1,4 +1,7 @@
+// Main page
 import Header from './components/Header'
+import ProjectCard from './components/ProjectCard'
+import projects from './data/projects'
 
 function App() {
   return (
@@ -6,6 +9,7 @@ function App() {
       <Header />
 
       <main>
+        {/* Intro */}
         <section className="hero">
           <div className="container hero__inner">
             <p className="eyebrow">Frontend developer in training</p>
@@ -24,25 +28,32 @@ function App() {
           </div>
         </section>
 
+        {/* Projects */}
         <section className="section" id="projects">
           <div className="container">
             <h2 className="section__title">Projects</h2>
             <p className="section__lead">
               A selection of things I’ve made and what I took away from them.
             </p>
-            {}
+
+            {/* One card for each project */}
+            <div className="projects-grid">
+              {projects.map((project) => (
+                <ProjectCard key={project.name} {...project} />
+              ))}
+            </div>
           </div>
         </section>
 
+        {/* About me */}
         <section className="section section--alt" id="about">
           <div className="container about">
             <h2 className="section__title">About me</h2>
-            
-              <p>
-                I'm Denis, and I'm studying Front End Development at Sundsgården. I enjoy
-                building websites and small apps. Right now I'm learning React 
-                and next I want to learn Typescript.
-              </p>
+            <p>
+              I'm Denis, and I'm studying Front End Development at Sundsgården. I enjoy
+              building websites and small apps. Right now I'm learning React
+              and next I want to learn Typescript.
+            </p>
           </div>
         </section>
       </main>
