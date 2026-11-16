@@ -1,6 +1,7 @@
 // Main page
 import Header from './components/Header'
 import ProjectCard from './components/ProjectCard'
+import Footer from './components/Footer'
 import projects from './data/projects'
 
 function App() {
@@ -57,6 +58,9 @@ function App() {
           </div>
         </section>
       </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
   )
 }

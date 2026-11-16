@@ -1,4 +1,4 @@
-// My projects.
+// My projects
 
 const projects = [
   {
