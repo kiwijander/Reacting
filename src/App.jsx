@@ -1,67 +1,26 @@
-// Main page
-import Header from './components/Header'
-import ProjectCard from './components/ProjectCard'
+// Decides which page to show for each address
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import projects from './data/projects'
+import Home from './pages/Home'
+import About from './pages/About'
+import Portfolio from './pages/Portfolio'
 
 function App() {
   return (
-    <div id="top">
-      <Header />
+    <>
+      <Navbar />
 
       <main>
-        {/* Intro */}
-        <section className="hero">
-          <div className="container hero__inner">
-            <p className="eyebrow">Frontend developer in training</p>
-            <h1 className="hero__title">
-              Hi, My name is <span className="accent">Denis</span>.<br/>
-              I build things for the web.
-            </h1>
-            <p className="hero__text">
-              I’m learning to turn ideas into clean, responsive and accessible
-              websites. Below are a few of the projects I’ve built so far.
-            </p>
-            <div className="hero__actions">
-              <a className="btn" href="#projects">See my work</a>
-              <a className="btn btn--ghost" href="#contact">Get in touch</a>
-            </div>
-          </div>
-        </section>
-
-        {/* Projects */}
-        <section className="section" id="projects">
-          <div className="container">
-            <h2 className="section__title">Projects</h2>
-            <p className="section__lead">
-              A selection of things I’ve made and what I took away from them.
-            </p>
-
-            {/* One card for each project */}
-            <div className="projects-grid">
-              {projects.map((project) => (
-                <ProjectCard key={project.name} {...project} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* About me */}
-        <section className="section section--alt" id="about">
-          <div className="container about">
-            <h2 className="section__title">About me</h2>
-            <p>
-              I'm Denis, and I'm studying Front End Development at Sundsgården. I enjoy
-              building websites and small apps. Right now I'm learning React
-              and next I want to learn Typescript.
-            </p>
-          </div>
-        </section>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+        </Routes>
       </main>
 
-      {/* Footer */}
       <Footer />
-    </div>
+    </>
   )
 }
 

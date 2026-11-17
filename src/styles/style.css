@@ -370,3 +370,11 @@ p {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
 }
+
+/* Preview button */
+button.btn {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
