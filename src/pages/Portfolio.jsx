@@ -1,10 +1,12 @@
 // Portfolio page
 import { useState } from 'react'
 import ProjectCard from '../components/ProjectCard'
+import Popup from '../components/Popup'
 import projects from '../data/projects'
 
 function Portfolio() {
   const [showProjects, setShowProjects] = useState(false)
+  const [selectedProject, setSelectedProject] = useState(null)
 
   return (
     <section className="section">
@@ -27,11 +29,23 @@ function Portfolio() {
         {showProjects && (
           <div className="projects-grid">
             {projects.map((project) => (
-              <ProjectCard key={project.name} {...project} />
+              <ProjectCard
+                key={project.name}
+                {...project}
+                onOpen={() => setSelectedProject(project)}
+              />
             ))}
           </div>
         )}
       </div>
+
+      {/* Popup */}
+      {selectedProject && (
+        <Popup
+          {...selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </section>
   )
 }

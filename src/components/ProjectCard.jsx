@@ -8,9 +8,10 @@ function ProjectCard({
   learned,
   role,
   challenges,
+  onOpen,
 }) {
   return (
-    <article className="project-card">
+    <article className="project-card" onClick={onOpen}>
       <div className="project-card__media">
         <img src={screenshot} alt={`Screenshot of ${name}`} loading="lazy" />
       </div>
@@ -24,6 +25,7 @@ function ProjectCard({
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${name} on GitHub`}
+            onClick={(event) => event.stopPropagation()}
           >
             GitHub ↗
           </a>
