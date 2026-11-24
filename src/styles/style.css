@@ -474,3 +474,39 @@ button.btn--small {
   margin-top: auto;
   align-self: flex-start;
 }
+
+/* Search bar */
+.portfolio-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-toolbar button.btn {
+  margin-bottom: 0;
+}
+
+.search__input {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+.search__input::placeholder {
+  color: var(--muted);
+}
+
+.search__input:focus {
+  border-color: var(--accent);
+}
+
+.no-results {
+  color: var(--muted);
+}

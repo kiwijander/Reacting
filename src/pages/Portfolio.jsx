@@ -6,18 +6,20 @@ import projects from '../data/projects'
 
 function Portfolio() {
   const [showProjects, setShowProjects] = useState(false)
+
+  // Which project was clicked
   const [selectedProject, setSelectedProject] = useState(null)
 
-  // Text from the search bar
+  // What the user typed in the search bar
   const [searchTerm, setSearchTerm] = useState('')
 
-  // Updates the search when typing
+  // Runs every time the user types
   function handleSearch(event) {
     setSearchTerm(event.target.value)
     setShowProjects(true)
   }
 
-  // Filter the projects by the search
+  // Only keep the projects that match the search
   const search = searchTerm.trim().toLowerCase()
   const filteredProjects = projects.filter(
     (project) =>
@@ -54,7 +56,7 @@ function Portfolio() {
           />
         </div>
 
-        {/* Message when nothing matches */}
+        {/* No results */}
         {showProjects && filteredProjects.length === 0 && (
           <p className="no-results">No projects found.</p>
         )}
